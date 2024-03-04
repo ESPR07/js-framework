@@ -1,10 +1,29 @@
+:root {
+  --primary: #2C3333;
+  --secondary: #2E4F4F;
+  --tertiary: #0E8388;
+  --text: #CBE4DE;
+}
+
+@font-face {
+  font-family: 'Source Sans';
+  src: url(/src/styles/fonts/SourceSans3-VariableFont_wght.ttf);
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  background-color: var(--primary);
+  color: var(--text);
+  font-family: 'Source Sans', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.active {
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 code {

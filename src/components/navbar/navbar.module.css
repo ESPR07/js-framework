@@ -1,0 +1,43 @@
+@font-face {
+  font-family: 'Major Mono Display';
+  src: url(/src/styles/fonts/MajorMonoDisplay-Regular.ttf);
+}
+
+nav {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+
+nav a {
+  margin: 20px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.active {
+  color: red;
+}
+
+nav a:hover {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.navbar_logo {
+  font-family: 'Major Mono Display', 'Courier New', Courier, monospace;
+  font-size: 2rem;
+}
+
+.nav_list {
+  margin: 0;
+  font-size: 1.3rem;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
