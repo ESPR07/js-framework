@@ -19,10 +19,6 @@ nav a {
   color: var(--text);
 }
 
-.active {
-  color: red;
-}
-
 nav a:hover {
   font-weight: bold;
   text-decoration: underline;
