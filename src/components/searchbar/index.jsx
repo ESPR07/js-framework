@@ -18,6 +18,12 @@ function Searchbar() {
 
   function searchResults(e) {
     e.preventDefault();
+    if (isOpen === "search_input") {
+      setOpen("search_open");
+    } else {
+      setOpen("search_input");
+      setSearchValue("");
+    }
   }
 
   return (

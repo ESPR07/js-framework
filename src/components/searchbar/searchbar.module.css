@@ -38,6 +38,7 @@ form {
   width: 100%;
   padding-left: 5px;
   transform: scaleX(0);
+  animation: searchAnimateClose 1s ease;
 }
 
 .search_open {
