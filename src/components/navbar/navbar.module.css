@@ -33,6 +33,13 @@ nav a:hover {
   font-size: 2rem;
 }
 
+.nav_interactions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+
 .nav_list {
   margin: 0;
   font-size: 1.3rem;
