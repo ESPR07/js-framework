@@ -1,8 +1,11 @@
 import { useState } from "react";
 import styles from "./searchbar.module.css";
+import SearchResults from "./searchResult";
 
 function Searchbar() {
   const [isOpen, setOpen] = useState("search_input");
+  const [searchValue, setSearchValue] = useState("")
+
 
   function openSearch(e) {
     e.preventDefault();
@@ -14,14 +17,36 @@ function Searchbar() {
   }
 
   function searchResults(e) {
-    e.preventDefault()
+    e.preventDefault();
   }
 
   return (
-    <form>
-      <input className={`${styles.search_input} ${styles[isOpen]}`} type="text" placeholder="Search" />
-      {isOpen === "search_input" ? <button className={`${styles.search_button}`} type="submit" onClick={openSearch}>C</button> : <button className={`${styles.search_button} ${styles.search_button_open}`} type="submit" onClick={searchResults}>O</button>}
-    </form>
+    <div className={styles.search_container}>
+      <form>
+        <input
+          className={`${styles.search_input} ${styles[isOpen]}`}
+          type="text"
+          placeholder="Search"
+          onChange={(e) => {
+            setSearchValue(e.target.value);
+          }}
+        />
+        {isOpen === "search_input" ? (
+          <button
+            className={`${styles.search_button}`}
+            type="submit"
+            onClick={openSearch}
+          ></button>
+        ) : (
+          <button
+            className={`${styles.search_button} ${styles.search_button_open}`}
+            type="submit"
+            onClick={searchResults}
+          ></button>
+        )}
+      </form>
+      <SearchResults searchValue = {searchValue}/>
+    </div>
   );
 }
 
