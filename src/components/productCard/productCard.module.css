@@ -1,0 +1,91 @@
+.card_grid {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding-top: 100px;
+  padding-inline: 10%;
+  padding-bottom: 50px;
+  gap: 40px;
+}
+
+.card_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 200px;
+  height: 400px;
+}
+
+.image_wrapper {
+  border-radius: 20px;
+  height: 100%;
+  overflow: hidden;
+  box-shadow: 0px 5px 10px 0px black;
+}
+
+.card_image {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  transition: transform 0.5s ease;
+}
+
+.card_container:hover .card_image {
+  transform: scale(1.1);
+}
+
+.card_title {
+  margin: 0;
+  margin-top: 10px;
+}
+
+.card_category {
+  margin: 0;
+  opacity: 70%;
+  font-size: 1.1rem;
+}
+
+.card_price_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card_price {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  text-decoration: line-through;
+}
+
+.card_discounted_price {
+  margin: 0;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  font-size: 1.5rem;
+}
+
+.loader_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.loader {
+  width: 20%;
+  padding: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #25b09b;
+  --_m: 
+    conic-gradient(#0000 10%,#000),
+    linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+          mask: var(--_m);
+  -webkit-mask-composite: source-out;
+          mask-composite: subtract;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {to{transform: rotate(1turn)}}

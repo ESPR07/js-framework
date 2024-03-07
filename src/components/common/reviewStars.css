@@ -1,0 +1,20 @@
+.stars_container {
+  display: flex;
+  padding-inline: 20px;
+}
+
+.empty_star {
+  background-image: url("/src/images/empty_star.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 50px;
+  width: 50px;
+}
+
+.filled_star {
+  background-image: url("/src/images/filled_star.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 50px;
+  width: 50px;
+}
