@@ -42,3 +42,46 @@ nav a:hover {
   flex-direction: row;
   align-items: center;
 }
+
+.nav_toggle {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  nav {
+    background: var(--secondary);
+  }
+
+  .nav_list {
+    display: none;
+    flex-direction: column;
+    align-items: baseline;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    height: 90vh;
+    width: 100vw;
+    padding-top: 50px;
+    background-image: url("/src/images/mobile-nav-background.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 1.5rem;
+  }
+
+  .open {
+    display: flex;
+  }
+
+  .nav_toggle {
+    display: block;
+    height: 50px;
+    width: 50px;
+    margin-inline: 30px;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    background-image: url("/src/images/burger-icon.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
