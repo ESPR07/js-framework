@@ -27,7 +27,7 @@ const Banner = styled.div`
 const BannerText = styled.p`
   font-family: 'Major Mono Display', 'Courier New', Courier, monospace;
   font-size: 3rem;
-  z-index: 100;
+  z-index: 1;
   user-select: none;
 `
 
