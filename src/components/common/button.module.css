@@ -1,0 +1,16 @@
+.button {
+  background-color: var(--tertiary);
+  color: var(--text);
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.button:hover {
+  background-color: var(--text);
+  color: var(--tertiary);
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
