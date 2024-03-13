@@ -39,15 +39,17 @@ nav a:hover {
   font-size: 1.3rem;
   list-style: none;
   display: flex;
+  justify-content: flex-end;
   flex-direction: row;
   align-items: center;
+  width: 100%;
 }
 
 .nav_toggle {
   display: none;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
   nav {
     background: var(--secondary);
   }
