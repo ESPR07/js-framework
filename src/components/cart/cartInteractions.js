@@ -77,9 +77,18 @@ function cartInteractions(state, action) {
         currentTotal += product.discountedPrice * product.quantity;
         return currentTotal;
       }, 0);
+
+      let removedCart = JSON.stringify({
+        ...state,
+        productList: cart,
+        totalPrice: newTotalPrice,
+      });
+
+      localStorage.setItem("cart", removedCart);
       return { ...state, productList: cart, totalPrice: newTotalPrice };
 
     case "clearCart":
+      localStorage.setItem("cart", initialValue);
       return initialValue;
 
     default:
