@@ -3,11 +3,28 @@ import APICall from "../api/apiFetch";
 import ReviewStars from "../common/reviewStars";
 import styles from "./productCard.module.css";
 import Button from "../common/button";
+import { useReducer } from "react";
+import cartInteractions from "../cart/cartInteractions";
 
 const url = "https://v2.api.noroff.dev/online-shop";
 
+// For testing purposes
+if (!localStorage.getItem("cart")) {
+  const initialValue = JSON.stringify({
+    productList: [],
+    totalPrice: 0,
+  });
+
+  localStorage.setItem("cart", initialValue);
+}
+
+const getCart = JSON.parse(localStorage.getItem("cart"));
+
 function ProductCard() {
   const { products, isLoading, isError } = APICall(url);
+  const [state, dispatch] = useReducer(cartInteractions, getCart);
+
+  console.log(state);
 
   if (isLoading) {
     return (
@@ -29,10 +46,7 @@ function ProductCard() {
         ({ id, title, image, discountedPrice, price, rating, tags }) => {
           return (
             <div key={id}>
-              <Link
-                to={`/product/${id}`}
-                className={styles.card_container}
-              >
+              <Link to={`/product/${id}`} className={styles.card_container}>
                 <div className={styles.image_wrapper}>
                   <img
                     className={styles.card_image}
@@ -50,7 +64,15 @@ function ProductCard() {
                   </p>
                 </div>
               </Link>
-              <Button text="Add to cart" />
+              <Button
+                text="Add to cart"
+                handleEvent={() => {
+                  dispatch({
+                    type: "addToCart",
+                    payload: { id, title, discountedPrice, price, image },
+                  });
+                }}
+              />
             </div>
           );
         }

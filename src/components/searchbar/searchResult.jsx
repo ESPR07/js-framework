@@ -23,8 +23,6 @@ function SearchResults(searchValue) {
       setProductList([]);
     }
   }, [products, searchValue]);
-
-  console.log(productList);
   
 
   return (
