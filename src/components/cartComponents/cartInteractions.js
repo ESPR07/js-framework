@@ -46,6 +46,7 @@ function cartInteractions(state, action) {
       });
 
       localStorage.setItem("cart", newCart);
+      window.dispatchEvent(new Event("storage"));
       return { ...state, productList: cart, totalPrice: newTotalPrice };
 
     case "removeProduct":
@@ -85,10 +86,12 @@ function cartInteractions(state, action) {
       });
 
       localStorage.setItem("cart", removedCart);
+      window.dispatchEvent(new Event("storage"));
       return { ...state, productList: cart, totalPrice: newTotalPrice };
 
     case "clearCart":
       localStorage.setItem("cart", initialValue);
+      window.dispatchEvent(new Event("storage"));
       return initialValue;
 
     default:

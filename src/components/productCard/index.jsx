@@ -4,11 +4,10 @@ import ReviewStars from "../common/reviewStars";
 import styles from "./productCard.module.css";
 import Button from "../common/button";
 import { useReducer } from "react";
-import cartInteractions from "../cart/cartInteractions";
+import cartInteractions from "../cartComponents/cartInteractions";
 
 const url = "https://v2.api.noroff.dev/online-shop";
 
-// For testing purposes
 if (!localStorage.getItem("cart")) {
   const initialValue = JSON.stringify({
     productList: [],
