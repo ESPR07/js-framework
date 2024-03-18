@@ -8,6 +8,8 @@ function cartInteractions(state, action) {
   let cart;
   let newTotalPrice;
 
+
+
   const productObject = {
     id: action.payload.id,
     title: action.payload.title,
@@ -90,7 +92,7 @@ function cartInteractions(state, action) {
       return { ...state, productList: cart, totalPrice: newTotalPrice };
 
     case "clearCart":
-      localStorage.setItem("cart", initialValue);
+      localStorage.removeItem("cart");
       window.dispatchEvent(new Event("storage"));
       return initialValue;
 
