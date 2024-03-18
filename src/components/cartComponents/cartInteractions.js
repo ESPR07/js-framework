@@ -8,6 +8,8 @@ function cartInteractions(state, action) {
   let cart;
   let newTotalPrice;
 
+
+
   const productObject = {
     id: action.payload.id,
     title: action.payload.title,
@@ -46,6 +48,7 @@ function cartInteractions(state, action) {
       });
 
       localStorage.setItem("cart", newCart);
+      window.dispatchEvent(new Event("storage"));
       return { ...state, productList: cart, totalPrice: newTotalPrice };
 
     case "removeProduct":
@@ -77,9 +80,20 @@ function cartInteractions(state, action) {
         currentTotal += product.discountedPrice * product.quantity;
         return currentTotal;
       }, 0);
+
+      let removedCart = JSON.stringify({
+        ...state,
+        productList: cart,
+        totalPrice: newTotalPrice,
+      });
+
+      localStorage.setItem("cart", removedCart);
+      window.dispatchEvent(new Event("storage"));
       return { ...state, productList: cart, totalPrice: newTotalPrice };
 
     case "clearCart":
+      localStorage.removeItem("cart");
+      window.dispatchEvent(new Event("storage"));
       return initialValue;
 
     default:

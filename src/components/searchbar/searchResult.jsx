@@ -1,28 +1,30 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import styles from "./searchbar.module.css";
-import APICall from "../api/apiFetch";
+import { APIResult } from "../../App";
+// import APICall from "../api/apiFetch";
 
-const url = "https://v2.api.noroff.dev/online-shop";
+// const url = "https://v2.api.noroff.dev/online-shop";
 
 function SearchResults(searchValue) {
 
   searchValue = searchValue.searchValue;
 
-  const { products, isLoading, isError } = APICall(url);
-  console.log(searchValue);
-  console.log(isLoading);
-  console.log(isError);
+  const {allProducts, loading, error} = useContext(APIResult);
+  console.log('search value: ', searchValue);
+  console.log('loading status', loading);
+  console.log('error status:', error);
 
-  const [productList, setProductList] = useState(products);
+
+  const [productList, setProductList] = useState(allProducts);
 
   useEffect(() => {
     if(searchValue !== "") {
-      const filteredList = products.filter((word) => word.title.toLowerCase().includes(searchValue.toLowerCase()));
+      const filteredList = allProducts.filter((word) => word.title.toLowerCase().includes(searchValue.toLowerCase()));
       setProductList(filteredList.slice(0, 5));
     } else {
       setProductList([]);
     }
-  }, [products, searchValue]);
+  }, [allProducts, searchValue]);
   
 
   return (

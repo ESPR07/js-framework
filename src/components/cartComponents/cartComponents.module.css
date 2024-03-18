@@ -1,0 +1,26 @@
+.cartContainer {
+  display: flex;
+  position: relative;
+  width: 45px;
+  height: 45px;
+}
+
+.cartIcon {
+  height: 100%;
+  width: 100%;
+  background-image: url("/src/images/cart-icon.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.cartAmount {
+  padding-inline: 7px;
+  font-size: 1rem;
+  background-color: var(--text);
+  color: var(--primary);
+  border-radius: 1000px;
+  position: absolute;
+  top: -5px;
+  right: 0;
+}

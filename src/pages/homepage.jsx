@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import ProductCard from '../components/productCard';
 import bannerImage from '../images/banner-image.webp';
+import ProductGrid from '../components/productGrid';
 
 const Banner = styled.div`
   width: 100%;
@@ -39,7 +39,7 @@ function HomePage() {
       <Banner title="Banner">
         <BannerText>Modern Shopping Made Easy</BannerText>
       </Banner>
-      <ProductCard />
+      <ProductGrid />
     </main>
   );
 }

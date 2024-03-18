@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import styles from "./navbar.module.css";
 import Searchbar from "../searchbar";
 import { useState } from "react";
+import NavCart from "../cartComponents";
 
 
 function Navbar() {
@@ -20,8 +21,7 @@ function Navbar() {
         <ul className={`${styles.nav_list} ${isOpen ? styles.open : ''}`}>
           <Searchbar />
           <NavLink to="/contact">Contact</NavLink>
-          <NavLink to="/cart">Price</NavLink>
-          <NavLink to="/cart">Cart</NavLink>
+          <NavLink to="/cart"><NavCart /></NavLink>
         </ul>
         <button className={styles.nav_toggle} onClick={toggleStyle}></button>
       </div>
