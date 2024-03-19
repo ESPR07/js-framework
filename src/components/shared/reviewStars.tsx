@@ -1,9 +1,8 @@
+import React from "react";
 import "./reviewStars.css";
 
-function ReviewStars({stars}) {
-
-  function ReviewRender({starCount}) {
-    switch(starCount) {
+const ReviewStars = ({stars}: {stars: number}) => {
+    switch(stars) {
       case 1:
         return (
           <div className="stars_container">
@@ -65,11 +64,6 @@ function ReviewStars({stars}) {
           </div>
         )
     }
-  }
-
-  return (
-    <ReviewRender starCount={stars} />
-  )
 }
 
 export default ReviewStars;

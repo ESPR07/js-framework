@@ -1,6 +1,6 @@
+import React from 'react';
 import styled from 'styled-components';
-import bannerImage from '../images/banner-image.webp';
-import ProductGrid from '../components/productGrid';
+import bannerImage from '../images/contact-banner.webp';
 
 const Banner = styled.div`
   width: 100%;
@@ -25,7 +25,7 @@ const Banner = styled.div`
 `;
 
 const BannerText = styled.p`
-  font-family: 'Major Mono Display', 'Courier New', Courier, monospace;
+  font-family: 'Source Sans', 'Courier New', Courier, monospace;
   font-size: 3rem;
   z-index: 1;
   user-select: none;
@@ -33,15 +33,14 @@ const BannerText = styled.p`
 
 
 
-function HomePage() {
+function Contact() {
   return (
     <main>
       <Banner title="Banner">
-        <BannerText>Modern Shopping Made Easy</BannerText>
+        <BannerText>We're here to help!</BannerText>
       </Banner>
-      <ProductGrid />
     </main>
   );
 }
 
-export default HomePage;
+export default Contact;

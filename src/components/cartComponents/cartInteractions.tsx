@@ -1,9 +1,16 @@
-export const initialValue = {
+import { Cart, CartItem } from "../../App";
+
+export const initialValue: Cart = {
   productList: [],
   totalPrice: 0,
 };
 
-function cartInteractions(state, action) {
+export type InteractionAction = {
+  type: "addToCart" | "removeProduct" | "clearCart",
+  payload: CartItem
+}
+
+const cartInteractions = (state: Cart, action: InteractionAction) => {
   let productIndex;
   let cart;
   let newTotalPrice;
@@ -31,7 +38,7 @@ function cartInteractions(state, action) {
       } else {
         cart = [
           ...cart.slice(0, productIndex),
-          { ...cart[productIndex], quantity: cart[productIndex].quantity + 1 },
+          { ...cart[productIndex], quantity: cart[productIndex].quantity + action.payload.quantity },
           ...cart.slice(productIndex + 1),
         ];
       }
@@ -64,7 +71,7 @@ function cartInteractions(state, action) {
             ...cart.slice(0, productIndex),
             {
               ...cart[productIndex],
-              quantity: cart[productIndex] - 1,
+              quantity: cart[productIndex].quantity - 1,
             },
             ...cart.slice(productIndex + 1),
           ];

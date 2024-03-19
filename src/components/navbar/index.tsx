@@ -1,12 +1,12 @@
 import { NavLink } from "react-router-dom";
 import styles from "./navbar.module.css";
 import Searchbar from "../searchbar";
-import { useState } from "react";
+import React, { useState } from "react";
 import NavCart from "../cartComponents";
 
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState("")
+  const [isOpen, setIsOpen] = useState<boolean>(false)
 
   function toggleStyle() {
     setIsOpen(prevState => !prevState);

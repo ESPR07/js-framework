@@ -1,6 +1,12 @@
+import React from "react";
 import styles from "./button.module.css";
 
-function Button({handleEvent, text}) {
+type ButtonTypes = {
+  handleEvent: () => void,
+  text: string,
+}
+
+const Button = ({handleEvent, text}: ButtonTypes) => {
   return(
     <button className={styles.button} onClick={handleEvent}>{text}</button>
   )

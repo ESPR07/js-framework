@@ -1,13 +1,8 @@
-import { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "./searchbar.module.css";
 import { APIResult } from "../../App";
-// import APICall from "../api/apiFetch";
 
-// const url = "https://v2.api.noroff.dev/online-shop";
-
-function SearchResults(searchValue) {
-
-  searchValue = searchValue.searchValue;
+const SearchResults = ({searchValue}: {searchValue: string}) => {
 
   const {allProducts, loading, error} = useContext(APIResult);
   console.log('search value: ', searchValue);
