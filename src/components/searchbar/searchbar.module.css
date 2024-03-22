@@ -25,7 +25,7 @@
   width: 40%;
 }
 
-form {
+.searchForm {
   display: flex;
   align-items: center;
 }

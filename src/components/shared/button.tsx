@@ -3,12 +3,13 @@ import styles from "./button.module.css";
 
 type ButtonTypes = {
   handleEvent: () => void,
+  type: "button" | "submit" | "reset" | undefined,
   text: string,
 }
 
-const Button = ({handleEvent, text}: ButtonTypes) => {
+const Button = ({text, type, handleEvent}: ButtonTypes) => {
   return(
-    <button className={styles.button} onClick={handleEvent}>{text}</button>
+    <button type={type} value={text} className={styles.button} onClick={handleEvent}>{text}</button>
   )
 }
 

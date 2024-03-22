@@ -9,7 +9,7 @@ function ProductGrid() {
   const { state, dispatch } = useContext(CartContext);
   const { allProducts, loading, error } = useContext(APIResult);
 
-  console.log(state);
+  console.log("Cart State: ", state);
 
   if (loading) {
     return (
@@ -68,6 +68,7 @@ function ProductGrid() {
               </Link>
               <Button
                 text="Add to cart"
+                type="button"
                 handleEvent={() => {
                   handleAddToCart({id, title, discountedPrice, price, image});
                 }}

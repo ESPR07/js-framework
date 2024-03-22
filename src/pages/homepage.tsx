@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import bannerImage from '../images/banner-image.webp';
 import ProductGrid from '../components/productGrid';
 
-const Banner = styled.div`
+export const Banner = styled.div`
   width: 100%;
   height: 350px;
   display: flex;
@@ -25,7 +25,7 @@ const Banner = styled.div`
   }
 `;
 
-const BannerText = styled.p`
+export const BannerText = styled.p`
   font-family: 'Major Mono Display', 'Courier New', Courier, monospace;
   font-size: 3rem;
   z-index: 1;

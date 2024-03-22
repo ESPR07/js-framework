@@ -69,7 +69,6 @@ const Layout = () => {
   const url = "https://v2.api.noroff.dev/online-shop";
   const { products, isLoading, isError } = APICall(url);
 
-  console.log(products);
   const localStoreCart = localStorage.getItem("cart");
 
   const [state, dispatch] = useReducer(
@@ -78,7 +77,7 @@ const Layout = () => {
   );
 
   return (
-    <div>
+    <React.Fragment>
       <CartContext.Provider value={{ state: state, dispatch: dispatch }}>
         <APIResult.Provider
           value={{ allProducts: products, loading: isLoading, error: isError }}
@@ -88,7 +87,7 @@ const Layout = () => {
           <Footer />
         </APIResult.Provider>
       </CartContext.Provider>
-    </div>
+    </React.Fragment>
   );
 };
 
