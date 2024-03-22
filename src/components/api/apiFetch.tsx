@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function APICall(url) {
+function APICall(url: string) {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);

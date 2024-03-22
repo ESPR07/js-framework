@@ -1,10 +1,11 @@
-import {useContext, useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import styles from "./cartComponents.module.css";
-import {CartContext} from "../../App";
+import {Cart, CartContext} from "../../App";
+import {initialValue} from "../cartComponents/cartInteractions"
 
 function NavCart() {
-    const [currentCart, setCurrentCart] = useState({})
-    const {state} = useContext(CartContext)
+    const [currentCart, setCurrentCart] = useState<Cart>(initialValue);
+    const {state} = useContext(CartContext);
 
     useEffect( () => {
         setCurrentCart(state)
