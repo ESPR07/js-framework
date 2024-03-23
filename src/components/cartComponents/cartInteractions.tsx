@@ -34,7 +34,7 @@ const cartInteractions = (state: Cart, action: InteractionAction) => {
       );
 
       if (productIndex === -1) {
-        cart.push({ ...productObject, quantity: 1 });
+        cart.push({ ...productObject, quantity: action.payload.quantity ?? 1 });
       } else {
         cart = [
           ...cart.slice(0, productIndex),

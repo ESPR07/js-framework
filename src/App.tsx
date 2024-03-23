@@ -7,30 +7,9 @@ import cartInteractions, {
   InteractionAction,
   initialValue,
 } from "./components/cartComponents/cartInteractions";
-import APICall from "./components/api/apiFetch";
 import Contact from "./pages/contact";
-
-type Product = {
-  description: string;
-  discountedPrice: number;
-  id: string;
-  image: {
-    alt: string;
-    url: string;
-  };
-  price: number;
-  rating: 1 | 2 | 3 | 4 | 5;
-  reviews: [
-    {
-      description: string;
-      id: string;
-      rating: 1 | 2 | 3 | 4 | 5;
-      username: string;
-    }
-  ];
-  tags: string[];
-  title: string;
-};
+import ProductPage from "./pages/productPage";
+import useGetProducts, { Product } from "./components/api/apiFetch";
 
 type APIInterface = {
   allProducts: Product[];
@@ -59,6 +38,7 @@ export const CartContext = createContext<{
   state: Cart;
   dispatch: ({ type, payload }: InteractionAction) => void;
 }>({ state: initialValue, dispatch: () => {} });
+
 export const APIResult = createContext<APIInterface>({
   allProducts: [],
   loading: false,
@@ -66,8 +46,7 @@ export const APIResult = createContext<APIInterface>({
 });
 
 const Layout = () => {
-  const url = "https://v2.api.noroff.dev/online-shop";
-  const { products, isLoading, isError } = APICall(url);
+  const { products, isLoading, isError } = useGetProducts();
 
   const localStoreCart = localStorage.getItem("cart");
 
@@ -99,12 +78,7 @@ function App() {
           <Route index element={<HomePage />}></Route>
           <Route
             path="product/:id"
-            element={
-              <img
-                src="https://t3.ftcdn.net/jpg/02/33/17/50/360_F_233175040_hwqRyiZlQkXimeLz2AIZhajyfiU9El1m.jpg"
-                alt="under construction"
-              />
-            }
+            element={<ProductPage />}
           ></Route>
           <Route path="contact" element={<Contact />}></Route>
           <Route

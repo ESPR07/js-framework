@@ -1,6 +1,7 @@
 .stars_container {
   display: flex;
-  padding-inline: 20px;
+  justify-content: center;
+  max-width: 150px;
 }
 
 .empty_star {

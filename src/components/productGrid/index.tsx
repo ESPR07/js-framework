@@ -4,6 +4,7 @@ import styles from "./productCard.module.css";
 import Button from "../shared/button";
 import React, { useContext } from "react";
 import { APIResult, CartContext } from "../../App";
+import Loader from "../shared/loader";
 
 function ProductGrid() {
   const { state, dispatch } = useContext(CartContext);
@@ -13,9 +14,7 @@ function ProductGrid() {
 
   if (loading) {
     return (
-      <div className={styles.loader_container}>
-        <div className={styles.loader}></div>
-      </div>
+      <Loader/>
     );
   }
 
