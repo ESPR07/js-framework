@@ -6,6 +6,7 @@ import Button from "../components/shared/button";
 import { APIResult, CartContext } from "../App";
 import ReviewStars from "../components/shared/reviewStars";
 import {Helmet} from "react-helmet";
+import ReviewDropdown from "../components/ReviewDropdown";
 
 function ProductPage() {
   const [quantity, setQuantity] = useState<number>(1)
@@ -65,6 +66,7 @@ function ProductPage() {
             </div>
             <ReviewStars stars={product.rating}/>
             <p className={styles.description}>{product.description}</p>
+            <ReviewDropdown reviewList={product.reviews} />
           </div>
         </main>
       </React.Fragment>
