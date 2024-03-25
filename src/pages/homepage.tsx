@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import bannerImage from '../images/banner-image.webp';
 import ProductGrid from '../components/productGrid';
+import {Helmet} from "react-helmet";
 
 export const Banner = styled.div`
   width: 100%;
@@ -37,6 +38,12 @@ export const BannerText = styled.p`
 function HomePage() {
   return (
     <main>
+      <Helmet>
+        <meta charSet='UTF-8'></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+        <meta name='description' content="Store Homepage"></meta>
+        <title>Homepage</title>
+      </Helmet>
       <Banner title="Banner">
         <BannerText>Modern Shopping Made Easy</BannerText>
       </Banner>
