@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import styles from "./searchbar.module.css";
 import { APIResult } from "../../App";
 import { Link } from "react-router-dom";
+import Loader from "../shared/loader";
 
 const SearchResults = ({searchValue, emptySearch}: {searchValue: string, emptySearch: (string: string) => void}) => {
 
@@ -21,6 +22,22 @@ const SearchResults = ({searchValue, emptySearch}: {searchValue: string, emptySe
       setProductList([]);
     }
   }, [allProducts, searchValue]);
+
+  if(loading) {
+    return (
+      <div className={styles.results_container}>
+        <Loader/>
+      </div>
+    )
+  }
+
+  if(error) {
+    return (
+      <div className={styles.results_container}>
+        <p>Oops Something went wrong!</p>
+      </div>
+    )
+  }
   
 
   return (
