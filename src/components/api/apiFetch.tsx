@@ -51,32 +51,6 @@ function useGetProducts() {
   return { products, isLoading, isError};
 }
 
-export function useGetProduct(id: string | undefined) {
-  const [product, setProducts] = useState<Product>();
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [isError, setIsError] = useState<boolean>(false);
-
-  useEffect(() => {
-    async function apiFetch() {
-      try {
-        setIsLoading(true);
-        setIsError(false);
-        const fetchProducts = await fetch(url + `/${id}`);
-        const productList = await fetchProducts.json();
-        setProducts(productList.data);
-      } catch (error) {
-        console.log(error);
-        setIsError(true);
-      } finally {
-        setIsLoading(false);
-      }
-    }
-
-    apiFetch();
-  }, [id]);
-
-  return { product, isLoading, isError};
-}
 
 
 export default useGetProducts;
