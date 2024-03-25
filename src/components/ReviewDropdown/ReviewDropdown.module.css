@@ -1,0 +1,44 @@
+.reviewToggle {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--text);
+  cursor: pointer;
+}
+
+.reviewText {
+  font-size: 1.3rem;
+  margin: 0;
+  margin-block: 5px;
+}
+
+.reviewToggleIcon {
+  background-color: rgba(0, 0, 0, 0);
+  background-image: url("/src/images/review-down-arrow.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border: none;
+  width: 50px;
+  cursor: pointer;
+}
+
+.reviewContainer {
+  border-bottom: 2px solid var(--text);
+}
+
+.reviewListClosed {
+  display: none;
+}
+
+.reviewListOpen {
+  display: block;
+}
+
+.reviewName {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.reviewComment {
+  font-size: 1.1rem;
+}
