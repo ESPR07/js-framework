@@ -61,7 +61,8 @@
 }
 
 .search_button_open {
-  background-image: url("../../images/search-icon-focus.svg");
+  background-image: url("../../images/close-icon-dark.svg");
+  background-size: 80%;
   border-left: solid 2px var(--primary);
   background-color: var(--text);
   transition: all 1s ease;
@@ -88,6 +89,8 @@
   align-items: center;
   height: 70px;
   border-bottom: solid 2px var(--primary);
+  margin: 0;
+  color: var(--primary);
 }
 
 .result_image {

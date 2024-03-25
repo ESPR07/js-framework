@@ -26,11 +26,13 @@ function Searchbar() {
         <input
           className={`${styles.search_input} ${styles[isOpen ? "search_open" : "search_input"]}`}
           type="text"
+          value={searchValue}
           placeholder="Search"
           title="Searchbar"
           onChange={(e) => {
             setSearchValue(e.target.value);
           }}
+          disabled={!isOpen}
         />
           <button
             className={`${styles.search_button} ${isOpen && styles.search_button_open}`}
@@ -38,7 +40,7 @@ function Searchbar() {
             title={isOpen ? "Close searchbar" : "Open searchbar"}
           ></button>
       </form>
-      <SearchResults searchValue = {searchValue}/>
+      <SearchResults searchValue = {searchValue} emptySearch = {setSearchValue}/>
     </div>
   );
 }

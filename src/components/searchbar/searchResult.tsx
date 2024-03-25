@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import styles from "./searchbar.module.css";
 import { APIResult } from "../../App";
+import { Link } from "react-router-dom";
 
-const SearchResults = ({searchValue}: {searchValue: string}) => {
+const SearchResults = ({searchValue, emptySearch}: {searchValue: string, emptySearch: (string: string) => void}) => {
 
   const {allProducts, loading, error} = useContext(APIResult);
   console.log('search value: ', searchValue);
@@ -26,7 +27,14 @@ const SearchResults = ({searchValue}: {searchValue: string}) => {
     <div className={styles.results_container}>
       {productList.map(({ id, title, price, image }) => {
         return (
-          <div key={id} className={styles.result_container}>
+          <Link
+            to={`/product/${id}`}
+            key={id}
+            className={styles.result_container}
+            onClick={() => {
+              emptySearch("");
+            }}
+          >
             <img
               src={image.url}
               alt={image.alt}
@@ -36,7 +44,7 @@ const SearchResults = ({searchValue}: {searchValue: string}) => {
               <p>{title}</p>
               <p>kr{price}</p>
             </div>
-          </div>
+          </Link>
         );
       })}
     </div>
