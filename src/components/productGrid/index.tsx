@@ -59,10 +59,8 @@ function ProductGrid() {
                 <p className={styles.card_category}>{tags[0]}</p>
                 <ReviewStars stars={rating} />
                 <div className={styles.card_price_container}>
-                  <p className={styles.card_price}>kr{price}</p>
-                  <p className={styles.card_discounted_price}>
-                    kr{discountedPrice}
-                  </p>
+                  {price !== discountedPrice ? <p className={styles.previousPrice}>kr{price}</p> : <p className={styles.card_discounted_price}>kr{price}</p>}
+                  {price !== discountedPrice ? <p className={styles.card_discounted_price}>kr{discountedPrice}</p> : ""}
                 </div>
               </Link>
               <Button
