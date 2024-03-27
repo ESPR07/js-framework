@@ -13,11 +13,17 @@
   width: 65%;
 }
 
-.cartHeader {
+.cartHeaderContainer {
   background-color: var(--secondary);
-  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding-block: 10px;
-  padding-left: 10px;
+  padding-inline: 10px;
+}
+
+.cartHeader {
+  margin: 0;
 }
 
 .productContainer {
@@ -85,8 +91,8 @@
 
 .summaryContainer {
   position: fixed;
-  width: 33%;
-  right: 20px;
+  width: 25%;
+  right: 100px;
   background-color: var(--secondary);
   padding-inline: 10px;
   padding-block: 20px;
