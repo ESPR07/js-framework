@@ -4,8 +4,10 @@
   border: none;
   border-radius: 5px;
   padding: 5px;
+  padding-inline: 10px;
   font-size: 1.1rem;
   cursor: pointer;
+  width: 100%;
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 

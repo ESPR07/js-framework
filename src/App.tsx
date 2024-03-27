@@ -10,6 +10,7 @@ import cartInteractions, {
 import Contact from "./pages/contact";
 import ProductPage from "./pages/productPage";
 import useGetProducts, { Product } from "./components/api/apiFetch";
+import CartPage from "./pages/cart";
 
 type APIInterface = {
   allProducts: Product[];
@@ -72,27 +73,20 @@ const Layout = () => {
 
 function App() {
   return (
-    <div>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />}></Route>
-          <Route
-            path="product/:id"
-            element={<ProductPage />}
-          ></Route>
-          <Route path="contact" element={<Contact />}></Route>
-          <Route
-            path="cart"
-            element={
-              <img
-                src="https://t3.ftcdn.net/jpg/02/33/17/50/360_F_233175040_hwqRyiZlQkXimeLz2AIZhajyfiU9El1m.jpg"
-                alt="under construction"
-              />
-            }
-          ></Route>
-        </Route>
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />}></Route>
+        <Route
+          path="product/:id"
+          element={<ProductPage />}
+        ></Route>
+        <Route path="contact" element={<Contact />}></Route>
+        <Route
+          path="cart"
+          element={<CartPage />}
+        ></Route>
+      </Route>
+    </Routes>
   );
 }
 
