@@ -61,8 +61,8 @@ function ProductPage() {
           <div className={styles.infoContainer}>
             <h1 className={styles.productTitle}>{product.title}</h1>
             <div className={styles.priceContainer}>
-              {product.price === product.discountedPrice ? <p className={styles.price}>NOK {product.price}</p>: <p className={styles.discounted}>NOK {product.price}</p>}
-              {product.price !== product.discountedPrice ? <p className={styles.price}>NOK {product.discountedPrice}</p>: ""}
+              {product.price === product.discountedPrice ? <p className={styles.price}>kr {product.price}</p>: <p className={styles.discounted}>kr {product.price}</p>}
+              {product.price !== product.discountedPrice ? <p className={styles.price}>kr {product.discountedPrice}</p>: ""}
             </div>
             <ReviewStars stars={product.rating}/>
             <p className={styles.description}>{product.description}</p>

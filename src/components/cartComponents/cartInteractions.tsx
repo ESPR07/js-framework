@@ -6,7 +6,7 @@ export const initialValue: Cart = {
 };
 
 export type InteractionAction = {
-  type: "addToCart" | "removeProduct" | "clearCart",
+  type: "addToCart" | "updateProduct" | "clearCart",
   payload: CartItem
 }
 
@@ -58,7 +58,7 @@ const cartInteractions = (state: Cart, action: InteractionAction) => {
       window.dispatchEvent(new Event("storage"));
       return { ...state, productList: cart, totalPrice: newTotalPrice };
 
-    case "removeProduct":
+    case "updateProduct":
       cart = [...state.productList];
 
       productIndex = cart.findIndex(
@@ -66,12 +66,12 @@ const cartInteractions = (state: Cart, action: InteractionAction) => {
       );
 
       if (productIndex !== -1) {
-        if (cart[productIndex].quantity > 1) {
+        if (action.payload.quantity >= 1) {
           cart = [
             ...cart.slice(0, productIndex),
             {
               ...cart[productIndex],
-              quantity: cart[productIndex].quantity - 1,
+              quantity: cart[productIndex].quantity = action.payload.quantity,
             },
             ...cart.slice(productIndex + 1),
           ];
