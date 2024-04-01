@@ -25,7 +25,7 @@ function Navbar() {
           <NavLink to="/contact" onClick={toggleStyle}>Contact</NavLink>
           <NavLink to="/cart" onClick={toggleStyle}><NavCart /></NavLink>
         </ul>
-        <button className={styles.nav_toggle} onClick={toggleStyle}></button>
+        <button name="Toggle Navbar" className={styles.nav_toggle} onClick={toggleStyle}></button>
       </div>
     </nav>
   );
