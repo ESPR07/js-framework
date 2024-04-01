@@ -14,14 +14,16 @@ function Navbar() {
 
   return (
     <nav>
-      <NavLink to="/" className={styles.navbar_logo}>
+      <NavLink to="/" onClick={() => {
+        setIsOpen(false);
+      }} className={styles.navbar_logo}>
         Checkout
       </NavLink>
       <div className={styles.nav_interactions}>
         <ul className={`${styles.nav_list} ${isOpen ? styles.open : ''}`}>
           <Searchbar />
-          <NavLink to="/contact">Contact</NavLink>
-          <NavLink to="/cart"><NavCart /></NavLink>
+          <NavLink to="/contact" onClick={toggleStyle}>Contact</NavLink>
+          <NavLink to="/cart" onClick={toggleStyle}><NavCart /></NavLink>
         </ul>
         <button className={styles.nav_toggle} onClick={toggleStyle}></button>
       </div>
