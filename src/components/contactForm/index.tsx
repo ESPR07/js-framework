@@ -1,33 +1,9 @@
-// import React, { ChangeEvent, useState } from "react";
 import React from "react";
 import Button from "../shared/button";
 import styles from "./contactForm.module.css";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 
 function ContactForm() {
-  // const [fullName, setFullName] = useState<string>("");
-  // const [email, setEmail] = useState<string>("");
-  // const [subject, setSubject] = useState<string>("");
-  // const [message, setMessage] = useState<string>("");
-
-  // function inputChange(event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) {
-  //   if(event.target.name === "fullName") {
-  //     console.log(event.target.value.length);
-  //     setFullName(event.target.value);
-  //   };
-
-  //   if(event.target.name === "email") {
-  //     setEmail(event.target.value);
-  //   };
-
-  //   if(event.target.name === "subject") {
-  //     setSubject(event.target.value);
-  //   };
-
-  //   if(event.target.name === "message") {
-  //     setMessage(event.target.value);
-  //   };
-  // }
 
   type FormData = {
     fullName: string;
@@ -43,9 +19,11 @@ function ContactForm() {
     formState: { errors },
   } = useForm<FormData>();
 
-  function onSubmit() {
+
+  const onSubmit: SubmitHandler<FormData> = (data) => {
+    console.log(data)
     alert("Thank you for contacting us! We'll come back to you as soon as are able.")
-    reset()
+    reset();
   }
 
   return (

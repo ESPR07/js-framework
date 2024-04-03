@@ -16,13 +16,11 @@ function ProductPage() {
 
   const product = allProducts.find((product) => product.id === id);
 
-  console.log("Cart State: ", state)
-
   function handleClick(id: string, title: string, discountedPrice: number, price: number, image: {alt: string, url: string}) {
     dispatch({type: "addToCart", payload: {id, title, discountedPrice, price, image, quantity: quantity}})
   }
 
-  if(loading) {
+  if(loading && !state) {
     return (
       <Loader/>
     )
