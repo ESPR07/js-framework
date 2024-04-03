@@ -11,6 +11,7 @@ import Contact from "./pages/contact";
 import ProductPage from "./pages/productPage";
 import useGetProducts, { Product } from "./components/api/apiFetch";
 import CartPage from "./pages/cart";
+import CartSuccess from "./pages/cartSuccess";
 
 type APIInterface = {
   allProducts: Product[];
@@ -85,6 +86,7 @@ function App() {
           path="cart"
           element={<CartPage />}
         ></Route>
+        <Route path="cartSuccess" element={<CartSuccess />}></Route>
       </Route>
     </Routes>
   );

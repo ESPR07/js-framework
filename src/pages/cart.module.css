@@ -87,7 +87,6 @@
 .price {
   width: 100%;
   margin: 0;
-  padding-right: 20px;
   font-size: 1.3rem;
 }
 
@@ -105,6 +104,7 @@
   padding-block: 20px;
   font-size: 1.3rem;
   max-height: 330px;
+  text-align: center;
 }
 
 .summaryHeader {
@@ -120,6 +120,10 @@
   display: flex;
   justify-content: space-between;
   padding-inline: 10px;
+}
+
+.summaryContainer button {
+  width: 90%;
 }
 
 .summaryContainer div:last-of-type {
@@ -158,6 +162,7 @@
 
   .productTitle {
     font-size: 1.1rem;
+    text-wrap: wrap;
   }
 
   .productInteraction {

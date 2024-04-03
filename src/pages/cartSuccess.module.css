@@ -1,0 +1,15 @@
+.successContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 150px;
+  text-align: center;
+  max-width: 400px;
+  margin-inline: auto;
+  padding-bottom: 50px;
+}
+
+@media screen and (max-width: 900px) {
+  .successContainer {
+    padding-inline: 30px;
+  }
+}

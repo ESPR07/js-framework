@@ -4,6 +4,7 @@ import { Cart, CartContext } from "../App";
 import { initialValue } from "../components/cartComponents/cartInteractions";
 import Button from "../components/shared/button";
 import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
 
 function CartPage() {
   const [increment, setIncrement] = useState<number>(1)
@@ -62,7 +63,6 @@ function CartPage() {
               <p>Total:</p>
               <p>kr 0</p>
             </div>
-            <Button text="Checkout" type="button" handleEvent={() => {}}/>
           </div>
         </div>
       </main>
@@ -144,7 +144,11 @@ function CartPage() {
               <p>Total:</p>
               <p>kr {currentCart.totalPrice.toFixed(2)}</p>
             </div>
-            <Button text="Checkout" type="button" handleEvent={() => {}}/>
+            <Link to="/cartSuccess">
+              <Button text="Checkout" type="button" handleEvent={() => {
+                handleClear("a", "b", 1, 2, imageObject)
+              }}/>
+            </Link>
           </div>
         </div>
       </main>
