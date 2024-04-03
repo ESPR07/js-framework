@@ -10,9 +10,7 @@ function ProductGrid() {
   const { state, dispatch } = useContext(CartContext);
   const { allProducts, loading, error } = useContext(APIResult);
 
-  console.log("Cart State: ", state);
-
-  if (loading) {
+  if (loading && !state) {
     return (
       <Loader/>
     );

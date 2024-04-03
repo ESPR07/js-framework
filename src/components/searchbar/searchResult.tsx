@@ -7,10 +7,6 @@ import Loader from "../shared/loader";
 const SearchResults = ({searchValue, emptySearch}: {searchValue: string, emptySearch: (string: string) => void}) => {
 
   const {allProducts, loading, error} = useContext(APIResult);
-  console.log('search value: ', searchValue);
-  console.log('loading status', loading);
-  console.log('error status:', error);
-
 
   const [productList, setProductList] = useState(allProducts);
 
