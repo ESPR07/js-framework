@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import bannerImage from '../images/banner-image.webp';
 import ProductGrid from '../components/productGrid';
@@ -24,6 +24,11 @@ export const Banner = styled.div`
     background-position: center;
     opacity: 40%;
   }
+
+  @media screen and (max-width: 900px) {
+    height: 200px;
+    margin-top: 70px;
+  }
 `;
 
 export const BannerText = styled.p`
@@ -31,11 +36,21 @@ export const BannerText = styled.p`
   font-size: 3rem;
   z-index: 1;
   user-select: none;
+
+  @media screen and (max-width: 900px) {
+   font-size: 1.7rem;
+   text-align: center; 
+  }
 `
 
 
 
 function HomePage() {
+  
+  useEffect(() => {
+    window.scrollTo(0,0);
+  }, [])
+
   return (
     <main>
       <Helmet>

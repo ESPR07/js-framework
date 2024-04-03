@@ -69,6 +69,7 @@ nav a:hover {
     background-repeat: no-repeat;
     background-size: cover;
     font-size: 1.5rem;
+    justify-content: flex-start;
   }
 
   .open {
@@ -79,7 +80,7 @@ nav a:hover {
     display: block;
     height: 50px;
     width: 50px;
-    margin-inline: 30px;
+    margin-right: 20px;
     background-color: rgba(0, 0, 0, 0);
     border: none;
     background-image: url("/src/images/burger-icon.svg");

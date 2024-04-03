@@ -66,3 +66,28 @@ flex-direction: column;
   font-size: 1.7rem;
   margin-top: 0;
 }
+
+@media screen and (max-width: 900px) {
+  .productContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding-top: 100px;
+  }
+
+  .interactionContainer {
+    width: 100%;
+  }
+
+  .quantityContainer {
+    width: 100%;
+  }
+
+  .infoContainer {
+    margin-left: 0;
+  }
+
+  .quantityInput {
+    height: 25px;
+  }
+}

@@ -33,3 +33,9 @@
   color: red;
   margin: 0;
 }
+
+@media screen and (max-width: 900px) {
+  .contactForm {
+    width: 80%;
+  }
+}
