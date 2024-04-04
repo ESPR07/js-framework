@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Loader from "../components/shared/loader";
 import styles from "./productPage.module.css";
@@ -15,6 +15,10 @@ function ProductPage() {
   const { allProducts, loading, error } = useContext(APIResult);
 
   const product = allProducts.find((product) => product.id === id);
+
+  useEffect(() => {
+    window.scrollTo(0,0);
+  }, [])
 
   function handleClick(id: string, title: string, discountedPrice: number, price: number, image: {alt: string, url: string}) {
     dispatch({type: "addToCart", payload: {id, title, discountedPrice, price, image, quantity: quantity}})

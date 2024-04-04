@@ -11,6 +11,10 @@ function CartPage() {
   const [currentCart, setCurrentCart] = useState<Cart>(initialValue);
   const {state, dispatch} = useContext(CartContext);
 
+  useEffect(() => {
+    window.scrollTo(0,0);
+  }, [])
+
   const imageObject = {
     alt: "yolo",
     url: "url"

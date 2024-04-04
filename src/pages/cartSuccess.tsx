@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./cartSuccess.module.css";
 import Button from "../components/shared/button";
 import { Link } from "react-router-dom";
 
 function CartSuccess() {
+
+  useEffect(() => {
+    window.scrollTo(0,0);
+  }, [])
+  
   return (
     <main>
       <div className={styles.successContainer}>

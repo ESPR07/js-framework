@@ -62,7 +62,7 @@ function ProductGrid() {
                 </div>
               </Link>
               <Button
-                text="Add to cart"
+                text="Add to Cart"
                 type="button"
                 handleEvent={() => {
                   handleAddToCart({id, title, discountedPrice, price, image});
