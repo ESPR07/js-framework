@@ -45,12 +45,12 @@ npm run start
 
 2. Open the live site:
 
-NOT YET READY
+[Checkout eCommerce Store](https://checkoutsindre.netlify.app/)
 
 ### Deployed Sites
 
 #### The Netlify deployment for this repository:
-NOT YET READY
+[Checkout eCommerce Store](https://checkoutsindre.netlify.app/)
 
 ## Contact
 [My LinkedIn Page](https://www.linkedin.com/in/sindre-str%C3%B8ms%C3%A6ther-der%C3%A5s-212353249/)
