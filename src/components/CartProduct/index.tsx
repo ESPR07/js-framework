@@ -9,7 +9,8 @@ function CartProduct({id, title, discountedPrice, price, image, quantity}: CartI
 
   const quantityRef = useRef<HTMLInputElement>(null);
 
-  function handleUpdate() {
+  function handleUpdate(e?: React.MouseEvent<HTMLButtonElement>) {
+    e?.preventDefault();
     if(quantityRef.current === null) {
       return
     }
@@ -40,6 +41,9 @@ function CartProduct({id, title, discountedPrice, price, image, quantity}: CartI
       }}>
         <Button text="Remove" type="button" handleEvent={(e) => {
           handleRemove(e)
+        }}/>
+        <Button text="Update" type="button" handleEvent={(e) => {
+          handleUpdate(e)
         }}/>
         <input className={styles.quantityInput} type="number" defaultValue={String(quantity)} ref={quantityRef} onBlur={() => {
           handleUpdate()

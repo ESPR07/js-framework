@@ -9,7 +9,8 @@ import {Helmet} from "react-helmet-async";
 import ReviewDropdown from "../components/ReviewDropdown";
 
 function ProductPage() {
-  const [quantity, setQuantity] = useState<number>(1)
+  const [quantity, setQuantity] = useState<number>(1);
+  const [buttonText, setButtonText] = useState("Add to Cart");
   const { state, dispatch } = useContext(CartContext);
   let {id} = useParams();
   const { allProducts, loading, error } = useContext(APIResult);
@@ -52,11 +53,17 @@ function ProductPage() {
             <img className={styles.productImage} src={product.image.url} alt={product.image.alt}></img>
             <div className={styles.quantityContainer}>
               <p className={styles.quantity}>Quantity:</p>
-              <input className={styles.quantityInput} type="number" placeholder="1" onChange={(e) => {
+              <input className={styles.quantityInput} type="number" defaultValue="1" onChange={(e) => {
                 setQuantity(Number(e.target.value))
               }}></input>
             </div>
-            <Button text="Add to cart" type="button" handleEvent={() => {
+            <Button text={buttonText} type="button" handleEvent={() => {
+              setButtonText("Added!");
+
+              setTimeout(() => {
+                setButtonText("Add to Cart");
+              }, 1000);
+              
               handleClick(product.id, product.title, product.discountedPrice, product.price, product.image);
             }}/>
           </div>
