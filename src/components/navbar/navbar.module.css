@@ -10,6 +10,7 @@ nav {
   align-items: center;
   position: fixed;
   width: 100%;
+  height: 75px;
   z-index: 10;
 }
 
@@ -60,9 +61,7 @@ nav a:hover {
     align-items: baseline;
     position: absolute;
     top: 75px;
-    left: 0;
     height: 90vh;
-    width: 100vw;
     padding-top: 50px;
     background-image: url("/src/images/mobile-nav-background.webp");
     background-position: center;

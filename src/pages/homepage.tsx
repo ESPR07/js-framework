@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import bannerImage from '../images/banner-image.webp';
+import contactBanner from '../images/contact-banner.webp';
 import ProductGrid from '../components/productGrid';
-import {Helmet} from "react-helmet";
+import {Helmet} from "react-helmet-async";
 
-export const Banner = styled.div`
+export const Banner = styled.div<{$homepage?: boolean;}>`
   width: 100%;
   height: 350px;
   display: flex;
@@ -15,11 +16,11 @@ export const Banner = styled.div`
   &:before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 0px;
+    left: 0px;
     height: 100%;
     width: 100%;
-    background-image: url("${bannerImage}");
+    background-image: url("${props => props.$homepage ? bannerImage : contactBanner}");
     background-size: cover;
     background-position: center;
     opacity: 40%;
@@ -59,7 +60,7 @@ function HomePage() {
         <meta name='description' content="Store Homepage"></meta>
         <title>Homepage</title>
       </Helmet>
-      <Banner title="Banner">
+      <Banner title="Banner" $homepage>
         <BannerText>Modern Shopping Made Easy</BannerText>
       </Banner>
       <ProductGrid />

@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Banner, BannerText } from './homepage';
 import ContactForm from '../components/contactForm';
-import {Helmet} from "react-helmet";
+import {Helmet} from "react-helmet-async";
 
 
 
 function Contact() {
+
+  useEffect(() => {
+    window.scrollTo(0,0);
+  }, [])
+
   return (
     <React.Fragment>
       <Helmet>
