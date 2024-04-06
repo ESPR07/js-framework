@@ -1,5 +1,6 @@
 ## Current status og the site:
 [![Build](https://github.com/ESPR07/js-framework/actions/workflows/pipeline.yml/badge.svg)](https://github.com/ESPR07/js-framework/actions/workflows/pipeline.yml)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2019bd94-0636-44fc-8f23-f8cd8e4a89f1/deploy-status)](https://app.netlify.com/sites/checkoutsindre/deploys)
 
 ## Javascript Framework
 ![Screenshot of site](https://github.com/ESPR07/js-framework/assets/111272036/9773bacc-d5b8-4089-a401-582cb35b7ab5)
