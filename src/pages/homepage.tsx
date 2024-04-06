@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import bannerImage from '../images/banner-image.webp';
 import contactBanner from '../images/contact-banner.webp';
-import ProductGrid from '../components/productGrid';
+import ProductGrid from '../components/ProductGrid';
 import {Helmet} from "react-helmet-async";
 
 export const Banner = styled.div<{$homepage?: boolean;}>`

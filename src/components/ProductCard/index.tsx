@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { CartContext } from "../../App";
-import { Product } from "../api/apiFetch";
+import { Product } from "../API/apiFetch";
 import Button from "../shared/button";
 import { Link } from "react-router-dom";
 import ReviewStars from "../shared/reviewStars";

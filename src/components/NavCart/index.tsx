@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from "react";
 import styles from "./cartComponents.module.css";
 import {Cart, CartContext} from "../../App";
-import {initialValue} from "../cartComponents/cartInteractions"
+import {initialValue} from "../Reducers/cartInteractions"
 
 function NavCart() {
     const [currentCart, setCurrentCart] = useState<Cart>(initialValue);

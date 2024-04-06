@@ -1,15 +1,15 @@
 import { Outlet, Route, Routes } from "react-router-dom";
-import Navbar from "./components/navbar";
-import Footer from "./components/footer";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import HomePage from "./pages/homepage";
 import React, { createContext, useReducer } from "react";
 import cartInteractions, {
   InteractionAction,
   initialValue,
-} from "./components/cartComponents/cartInteractions";
+} from "./components/Reducers/cartInteractions";
 import Contact from "./pages/contact";
 import ProductPage from "./pages/productPage";
-import useGetProducts, { Product } from "./components/api/apiFetch";
+import useGetProducts, { Product } from "./components/API/apiFetch";
 import CartPage from "./pages/cart";
 import CartSuccess from "./pages/cartSuccess";
 
