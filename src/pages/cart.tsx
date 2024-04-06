@@ -3,7 +3,7 @@ import styles from "./cart.module.css";
 import { Cart, CartContext } from "../App";
 import { initialValue } from "../components/cartComponents/cartInteractions";
 import Button from "../components/shared/button";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 function CartPage() {

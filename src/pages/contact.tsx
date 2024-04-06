@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Banner, BannerText } from './homepage';
 import ContactForm from '../components/contactForm';
-import {Helmet} from "react-helmet";
+import {Helmet} from "react-helmet-async";
 
 
 

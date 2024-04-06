@@ -5,7 +5,7 @@ import styles from "./productPage.module.css";
 import Button from "../components/shared/button";
 import { APIResult, CartContext } from "../App";
 import ReviewStars from "../components/shared/reviewStars";
-import {Helmet} from "react-helmet";
+import {Helmet} from "react-helmet-async";
 import ReviewDropdown from "../components/ReviewDropdown";
 
 function ProductPage() {

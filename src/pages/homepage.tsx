@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import bannerImage from '../images/banner-image.webp';
 import contactBanner from '../images/contact-banner.webp';
 import ProductGrid from '../components/productGrid';
-import {Helmet} from "react-helmet";
+import {Helmet} from "react-helmet-async";
 
 export const Banner = styled.div<{$homepage?: boolean;}>`
   width: 100%;
