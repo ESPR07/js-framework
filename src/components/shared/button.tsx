@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./button.module.css";
 
 type ButtonTypes = {
-  handleEvent: () => void,
+  handleEvent: (e?: React.MouseEvent<HTMLButtonElement>) => void,
   type: "button" | "submit" | "reset" | undefined,
   text: string,
 }

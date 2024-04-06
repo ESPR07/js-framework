@@ -5,9 +5,9 @@ import { initialValue } from "../components/cartComponents/cartInteractions";
 import Button from "../components/shared/button";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+import CartProduct from "../components/CartProduct";
 
 function CartPage() {
-  const [increment, setIncrement] = useState<number>(1)
   const [currentCart, setCurrentCart] = useState<Cart>(initialValue);
   const {state, dispatch} = useContext(CartContext);
 
@@ -18,14 +18,6 @@ function CartPage() {
   const imageObject = {
     alt: "yolo",
     url: "url"
-  }
-
-  function handleUpdate(id: string, title: string, discountedPrice: number, price: number, image: {alt: string, url: string,}) {
-    dispatch({type: "updateProduct", payload: {id, title, discountedPrice, price, image, quantity: increment}})
-  }
-
-  function handleRemove(id: string, title: string, discountedPrice: number, price: number, image: {alt: string, url: string,}) {
-    dispatch({type: "updateProduct", payload: {id, title, discountedPrice, price, image, quantity: 0}})
   }
 
   function handleClear(id: string, title: string, discountedPrice: number, price: number, image: {alt: string, url: string,}) {
@@ -95,42 +87,7 @@ function CartPage() {
             </div>
             {currentCart.productList.map((product) => {
               return (
-                <div key={product.id}>
-                  <div className={styles.productContainer}>
-                    <img src={product.image.url} alt={product.image.alt} className={styles.productImage}></img>
-                    <div className={styles.productInfoContainer}>
-                      <div className={styles.productTitleContainer}>
-                        <h2 className={styles.productTitle}>{product.title}</h2>
-                        <div key={product.id} className={styles.priceContainer}>
-                        {product.price === product.discountedPrice ? <p className={styles.price}>kr {product.price}</p> : <p className={styles.discountedPrice}>kr {product.price}</p>}
-                        {product.price === product.discountedPrice ? "" : <p className={styles.price}>kr {product.discountedPrice}</p>}
-                        </div>
-                      </div>
-                      <div className={styles.productInteraction}>
-                        <Button text="Remove" type="button" handleEvent={() => {
-                          handleRemove(product.id, product.title, product.discountedPrice, product.price, product.image)
-                        }}/>
-                        <Button text="Update" type="button" handleEvent={() => {
-                          handleUpdate(product.id, product.title, product.discountedPrice, product.price, product.image)
-                        }}/>
-                        <input className={styles.quantityInput} type="number" placeholder={String(product.quantity)} onChange={(e) => {
-                          setIncrement(Number(e.target.value));
-                        }}></input>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.productInteractionMobile}>
-                    <Button text="Remove" type="button" handleEvent={() => {
-                      handleRemove(product.id, product.title, product.discountedPrice, product.price, product.image)
-                      }}/>
-                    <Button text="Update" type="button" handleEvent={() => {
-                      handleUpdate(product.id, product.title, product.discountedPrice, product.price, product.image)
-                      }}/>
-                    <input className={styles.quantityInput} type="number" placeholder={String(product.quantity)} onChange={(e) => {
-                      setIncrement(Number(e.target.value));
-                      }}></input>
-                  </div>
-                </div>
+                <CartProduct key={product.id} {...product}/>
               )
             })}
           </div>
