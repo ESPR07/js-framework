@@ -1,5 +1,5 @@
 import { Outlet, Route, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/NavBar";
 import Footer from "./components/Footer";
 import HomePage from "./pages/homepage";
 import React, { createContext, useReducer } from "react";
