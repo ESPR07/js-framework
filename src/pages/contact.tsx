@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Banner, BannerText } from './homepage';
-import ContactForm from '../components/contactForm';
+import ContactForm from '../components/ContactForm';
 import {Helmet} from "react-helmet-async";
 
 

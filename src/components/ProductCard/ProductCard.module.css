@@ -1,13 +1,3 @@
-.card_grid {
-  display: grid;
-  justify-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  padding-top: 100px;
-  padding-inline: 10%;
-  padding-bottom: 50px;
-  gap: 40px;
-}
-
 .card_container {
   display: flex;
   flex-direction: column;
